@@ -1,5 +1,8 @@
 package com.edu.ucne.appevento.data.remote.dto
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true  )
  data class UsuarioDto (
 
      val usuarioId:Int?=0,

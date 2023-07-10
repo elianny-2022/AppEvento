@@ -12,12 +12,6 @@ interface EventoApi {
     @GET("/usuario/usuarios/{id}")
     suspend fun getUsuariosById(@Path("id") id: Int): UsuarioDto
 
-    @GET("/list/usario/{correo},{contraseña}")
-    suspend fun getUsuarioByLogin(
-        @Path("correo") email: String,
-        @Path("contraseña") clave: String
-    ): UsuarioDto
-
     @POST("/usuario/save")
     suspend fun postUsuarios(@Body usuarioDto: UsuarioDto)
 
@@ -26,32 +20,19 @@ interface EventoApi {
 
 
     /* Evento */
-    @GET("/evento/list")
+    @GET("eventos/evento/list")
     suspend fun getEvento(): List<EventoDto>
 
-    @GET("/eventos/find/{id}")
+    @GET("eventos/eventos/find/{id}")
     suspend fun getEventoById(@Path("id") id: Int): EventoDto
 
 
     /* Boletos */
-    @GET("/listboleto/boleto")
+    @GET("/boletos/listboleto/boleto")
     suspend fun getBoleto(): List<BoletoDto>
 
-    @GET("/boleto/find/{id}")
+    @GET("/boletos/boleto/find/{id}")
     suspend fun getBoletosById(@Path("id") id: Int): BoletoDto
 
 
-    /* Seccion */
-    @GET("/listseccion/seccion")
-    suspend fun getSeccion(@Path("id") id: Int): List<SeccionDto>
-
-    @GET("/seccion/find/{id}")
-    suspend fun getSeccionById(@Path("id") id: Int): SeccionDto
-
-
-    /* Silla */
-    @GET("/silla/list")
-    suspend fun getSilla() : List<SillaDto>
-    @GET("/sillas/find/{id}")
-    suspend fun getSillaById(@Path("id") id:Int) : SillaDto
 }

@@ -13,7 +13,7 @@ class EventoRepositoryImp @Inject constructor(
     private val api: EventoApi
 ): EventoRepository {
 
-    override fun getEvento(id: Int): Flow<Resource<List<EventoDto>>> = flow {
+    override fun getEvento(): Flow<Resource<List<EventoDto>>> = flow {
         try {
             emit(Resource.Loading())
 
